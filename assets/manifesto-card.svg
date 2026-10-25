@@ -1,55 +1,57 @@
-<svg fill="none" viewBox="0 0 920 135" width="920" height="135" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" viewBox="0 0 920 120" width="920" height="120" xmlns="http://www.w3.org/2000/svg">
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         .card {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
-          height: 131px;
+          height: 116px;
           border-radius: 16px;
           position: relative;
           overflow: hidden;
-          background: linear-gradient(135deg, #161324 0%, #632cd6 50%, #8b5cf6 100%);
-          border: 1px solid rgba(139, 92, 246, 0.4);
-          box-shadow: 0 10px 30px rgba(15, 23, 42, 0.6), inset 0 0 30px rgba(139, 92, 246, 0.12);
+          /* Темный обсидиановый фон с деликатным фиолетовым свечением для баланса цвета */
+          background: linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(22, 19, 36, 0.90) 50%, rgba(30, 27, 75, 0.75) 100%);
+          border: 1px solid rgba(139, 92, 246, 0.35);
+          box-shadow: 0 8px 30px rgba(10, 14, 26, 0.8), inset 0 0 24px rgba(124, 58, 237, 0.1);
           display: flex;
           flex-direction: column;
           justify-content: center;
-          padding: 0 36px;
+          padding: 0 34px;
         }
 
-        .layer2 {
+        .ambient-glow {
           position: absolute;
-          inset: 0;
-          background: linear-gradient(135deg, #0f172a 0%, #7c3aed 100%);
-          animation: morphCard 7s ease-in-out infinite alternate;
-          z-index: 1;
+          width: 260px;
+          height: 120px;
+          top: -20px;
+          right: 40px;
+          background: radial-gradient(circle, rgba(124, 58, 237, 0.22) 0%, transparent 70%);
+          pointer-events: none;
         }
 
         .light-sweep {
           position: absolute;
           top: 0;
           left: -100%;
-          width: 50%;
+          width: 40%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-          transform: skewX(-25deg);
-          animation: sweep 8s ease-in-out infinite;
-          z-index: 2;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+          transform: skewX(-20deg);
+          animation: sweep 9s ease-in-out infinite;
+          pointer-events: none;
         }
 
         .content {
           position: relative;
-          z-index: 3;
+          z-index: 2;
         }
 
         .quote-line-1 {
-          font-size: 16px;
+          font-size: 15.5px;
           font-weight: 500;
-          color: #ffffff;
+          color: #f8fafc;
           line-height: 1.45;
           letter-spacing: 0.2px;
-          text-shadow: 0 2px 10px rgba(15, 23, 42, 0.5);
           display: flex;
           align-items: center;
           gap: 10px;
@@ -58,38 +60,35 @@
         .spark {
           display: inline-block;
           color: #c084fc;
-          font-size: 14px;
+          font-size: 13px;
+          filter: drop-shadow(0 0 6px rgba(192, 132, 252, 0.6));
         }
 
         .quote-line-2 {
           margin-top: 8px;
-          font-size: 15px;
+          font-size: 14.5px;
           font-weight: 400;
-          color: #ddd6fe;
+          color: #cbd5e1;
           line-height: 1.45;
           letter-spacing: 0.15px;
         }
 
-        @keyframes morphCard {
-          0%   { opacity: 0; }
-          100% { opacity: 1; }
-        }
         @keyframes sweep {
-          0%, 60% { left: -100%; }
-          100%    { left: 200%; }
+          0%, 65% { left: -100%; }
+          100%    { left: 220%; }
         }
       </style>
 
       <div class="card">
-        <div class="layer2"></div>
+        <div class="ambient-glow"></div>
         <div class="light-sweep"></div>
         <div class="content">
           <div class="quote-line-1">
             <span class="spark">✦</span>
-            <span>Учусь в БГУИР и создаю автономные системы с фокусом на цифровой суверенитет, надежность и приватность.</span>
+            <span>Создаю автономные и локальные системы с фокусом на цифровой суверенитет и надежность.</span>
           </div>
           <div class="quote-line-2">
-            Верю, что настоящая сложность должна быть невидимой: чем глубже архитектура внутри, тем спокойнее и естественнее она снаружи.
+            Настоящая сложность должна быть невидимой: чем глубже архитектура внутри, тем спокойнее и естественнее она ощущается снаружи.
           </div>
         </div>
       </div>
