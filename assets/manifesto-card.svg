@@ -1,0 +1,98 @@
+<svg fill="none" viewBox="0 0 920 135" width="920" height="135" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        .card {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+          height: 131px;
+          border-radius: 16px;
+          position: relative;
+          overflow: hidden;
+          background: linear-gradient(135deg, #161324 0%, #632cd6 50%, #8b5cf6 100%);
+          border: 1px solid rgba(139, 92, 246, 0.4);
+          box-shadow: 0 10px 30px rgba(15, 23, 42, 0.6), inset 0 0 30px rgba(139, 92, 246, 0.12);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0 36px;
+        }
+
+        .layer2 {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, #0f172a 0%, #7c3aed 100%);
+          animation: morphCard 7s ease-in-out infinite alternate;
+          z-index: 1;
+        }
+
+        .light-sweep {
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+          transform: skewX(-25deg);
+          animation: sweep 8s ease-in-out infinite;
+          z-index: 2;
+        }
+
+        .content {
+          position: relative;
+          z-index: 3;
+        }
+
+        .quote-line-1 {
+          font-size: 16px;
+          font-weight: 500;
+          color: #ffffff;
+          line-height: 1.45;
+          letter-spacing: 0.2px;
+          text-shadow: 0 2px 10px rgba(15, 23, 42, 0.5);
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .spark {
+          display: inline-block;
+          color: #c084fc;
+          font-size: 14px;
+        }
+
+        .quote-line-2 {
+          margin-top: 8px;
+          font-size: 15px;
+          font-weight: 400;
+          color: #ddd6fe;
+          line-height: 1.45;
+          letter-spacing: 0.15px;
+        }
+
+        @keyframes morphCard {
+          0%   { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        @keyframes sweep {
+          0%, 60% { left: -100%; }
+          100%    { left: 200%; }
+        }
+      </style>
+
+      <div class="card">
+        <div class="layer2"></div>
+        <div class="light-sweep"></div>
+        <div class="content">
+          <div class="quote-line-1">
+            <span class="spark">✦</span>
+            <span>Учусь в БГУИР и создаю автономные системы с фокусом на цифровой суверенитет, надежность и приватность.</span>
+          </div>
+          <div class="quote-line-2">
+            Верю, что настоящая сложность должна быть невидимой: чем глубже архитектура внутри, тем спокойнее и естественнее она снаружи.
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
