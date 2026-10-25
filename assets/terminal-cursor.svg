@@ -1,0 +1,295 @@
+<svg fill="none" viewBox="0 0 860 320" width="860" height="320" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        .card {
+          font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, sans-serif;
+          height: 316px;
+          border-radius: 22px;
+          position: relative;
+          overflow: hidden;
+          /* Градиент №1 */
+          background: linear-gradient(135deg, #161324 0%, #632cd6 50%, #8b5cf6 100%);
+          border: 1px solid rgba(167, 139, 250, 0.35);
+          box-shadow: 0 20px 50px rgba(15, 23, 42, 0.65), inset 0 0 60px rgba(139, 92, 246, 0.25);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 32px 40px;
+          color: #ffffff;
+        }
+
+        /* Градиент №2 — плавно переливается поверх первого */
+        .gradient-two {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, #0f172a 0%, #7c3aed 100%);
+          animation: breatheGradient 6s ease-in-out infinite alternate;
+          z-index: 0;
+        }
+
+        /* Мягкие парящие световые блики */
+        .orb-1 {
+          position: absolute;
+          width: 320px;
+          height: 320px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(139, 92, 246, 0.55) 0%, rgba(139, 92, 246, 0) 70%);
+          top: -110px;
+          right: -50px;
+          animation: floatOne 8s ease-in-out infinite alternate;
+          z-index: 1;
+        }
+        .orb-2 {
+          position: absolute;
+          width: 260px;
+          height: 260px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(99, 44, 214, 0.5) 0%, rgba(15, 23, 42, 0) 70%);
+          bottom: -90px;
+          left: 10%;
+          animation: floatTwo 10s ease-in-out infinite alternate;
+          z-index: 1;
+        }
+
+        /* Едва заметная эстетичная сетка */
+        .subtle-grid {
+          position: absolute;
+          inset: 0;
+          background-image:
+            linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+          background-size: 36px 36px;
+          z-index: 1;
+        }
+
+        .top-row {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .window-dots {
+          display: flex;
+          gap: 8px;
+        }
+        .dot {
+          width: 11px;
+          height: 11px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.25);
+        }
+        .status {
+          font-family: 'SFMono-Regular', 'JetBrains Mono', Menlo, monospace;
+          font-size: 12px;
+          color: #e9d5ff;
+          background: rgba(15, 23, 42, 0.4);
+          border: 1px solid rgba(196, 181, 253, 0.3);
+          padding: 5px 14px;
+          border-radius: 999px;
+          backdrop-filter: blur(8px);
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .pulse-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: #c4b5fd;
+          box-shadow: 0 0 8px #ffffff;
+          animation: blink 2s infinite;
+        }
+
+        .center-content {
+          position: relative;
+          z-index: 2;
+          my: auto;
+        }
+        .greeting {
+          font-family: 'SFMono-Regular', 'JetBrains Mono', Menlo, monospace;
+          font-size: 13px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #ddd6fe;
+          margin-bottom: 8px;
+        }
+        .title {
+          font-size: 52px;
+          font-weight: 800;
+          letter-spacing: -1px;
+          line-height: 1.05;
+          background: linear-gradient(90deg, #ffffff 0%, #f3e8ff 50%, #c4b5fd 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-bottom: 12px;
+        }
+        .bio {
+          font-size: 17px;
+          font-weight: 400;
+          color: #ede9fe;
+          max-width: 580px;
+          line-height: 1.5;
+          opacity: 0.92;
+        }
+        .cursor-bar {
+          display: inline-block;
+          width: 9px;
+          height: 18px;
+          background: #e9d5ff;
+          vertical-align: middle;
+          margin-left: 6px;
+          animation: blink 1s step-end infinite;
+        }
+
+        .bottom-pills {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          gap: 14px;
+        }
+        .pill {
+          font-family: 'SFMono-Regular', 'JetBrains Mono', Menlo, monospace;
+          font-size: 13px;
+          color: #f3e8ff;
+          padding: 9px 18px;
+          border-radius: 12px;
+          background: rgba(15, 23, 42, 0.45);
+          border: 1px solid rgba(196, 181, 253, 0.28);
+          backdrop-filter: blur(8px);
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+        .pill.p1 { animation: activePill1 6s ease-in-out infinite; }
+        .pill.p2 { animation: activePill2 6s ease-in-out infinite; }
+        .pill.p3 { animation: activePill3 6s ease-in-out infinite; }
+
+        /* Настоящий :hover при открытии SVG в браузере */
+        .pill:hover {
+          background: rgba(255, 255, 255, 0.18);
+          border-color: #ffffff;
+          transform: translateY(-3px);
+          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.4);
+        }
+
+        /* Плавающий курсор мыши */
+        .pointer {
+          position: absolute;
+          z-index: 10;
+          width: 22px;
+          height: 22px;
+          pointer-events: none;
+          animation: glideCursor 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+          filter: drop-shadow(0 4px 10px rgba(15, 23, 42, 0.7));
+        }
+
+        @keyframes breatheGradient {
+          0%   { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        @keyframes floatOne {
+          0%   { transform: translate(0, 0) scale(1); }
+          100% { transform: translate(-120px, 40px) scale(1.2); }
+        }
+        @keyframes floatTwo {
+          0%   { transform: translate(0, 0) scale(1); }
+          100% { transform: translate(100px, -30px) scale(1.15); }
+        }
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50%      { opacity: 0.2; }
+        }
+        @keyframes glideCursor {
+          0%   { transform: translate(95px, 268px) scale(1); }
+          14%  { transform: translate(95px, 268px) scale(0.86); }
+          33%  { transform: translate(235px, 268px) scale(1); }
+          47%  { transform: translate(235px, 268px) scale(0.86); }
+          66%  { transform: translate(395px, 268px) scale(1); }
+          80%  { transform: translate(395px, 268px) scale(0.86); }
+          100% { transform: translate(95px, 268px) scale(1); }
+        }
+        @keyframes activePill1 {
+          0%, 22% {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.35);
+          }
+          30%, 100% {
+            background: rgba(15, 23, 42, 0.45);
+            border-color: rgba(196, 181, 253, 0.28);
+            transform: translateY(0);
+            box-shadow: none;
+          }
+        }
+        @keyframes activePill2 {
+          0%, 30%, 62%, 100% {
+            background: rgba(15, 23, 42, 0.45);
+            border-color: rgba(196, 181, 253, 0.28);
+            transform: translateY(0);
+            box-shadow: none;
+          }
+          36%, 55% {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.35);
+          }
+        }
+        @keyframes activePill3 {
+          0%, 63%, 95%, 100% {
+            background: rgba(15, 23, 42, 0.45);
+            border-color: rgba(196, 181, 253, 0.28);
+            transform: translateY(0);
+            box-shadow: none;
+          }
+          69%, 88% {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.35);
+          }
+        }
+      </style>
+
+      <div class="card">
+        <div class="gradient-two"></div>
+        <div class="orb-1"></div>
+        <div class="orb-2"></div>
+        <div class="subtle-grid"></div>
+
+        <div class="top-row">
+          <div class="window-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="status">
+            <span class="pulse-dot"></span>
+            <span>@GreyPikachu</span>
+          </div>
+        </div>
+
+        <div class="center-content">
+          <div class="greeting">Hello, World</div>
+          <div class="title">GreyPikachu</div>
+          <div class="bio">
+            Люблю превращать идеи в быстрые, автономные и красивые вещи, которые просто работают.<span class="cursor-bar"></span>
+          </div>
+        </div>
+
+        <div class="bottom-pills">
+          <div class="pill p1">Create</div>
+          <div class="pill p2">Experiment</div>
+          <div class="pill p3">Build</div>
+        </div>
+
+        <svg class="pointer" viewBox="0 0 24 24" fill="#ffffff" stroke="#161324" stroke-width="1.5">
+          <path d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"/>
+        </svg>
+      </div>
+    </div>
+  </foreignObject>
+</svg>

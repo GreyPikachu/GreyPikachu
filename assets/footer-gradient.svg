@@ -1,0 +1,65 @@
+<svg fill="none" viewBox="0 0 900 80" width="900" height="80" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        .footer-box {
+          height: 76px;
+          border-radius: 16px;
+          position: relative;
+          overflow: hidden;
+          background: linear-gradient(135deg, #161324 0%, #632cd6 50%, #8b5cf6 100%);
+          border: 1px solid rgba(139, 92, 246, 0.45);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+          color: #f3e8ff;
+          font-size: 13px;
+          letter-spacing: 0.6px;
+        }
+        .layer2 {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, #0f172a 0%, #7c3aed 100%);
+          animation: morphFooter 7s ease-in-out infinite alternate;
+          z-index: 1;
+        }
+        .text {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background: rgba(15, 23, 42, 0.45);
+          padding: 6px 18px;
+          border-radius: 999px;
+          border: 1px solid rgba(196, 181, 253, 0.35);
+        }
+        .dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #a78bfa;
+          box-shadow: 0 0 8px #8b5cf6;
+          animation: pulse 2s infinite;
+        }
+        @keyframes morphFooter {
+          0%   { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50%      { transform: scale(1.35); opacity: 0.6; }
+        }
+      </style>
+      <div class="footer-box">
+        <div class="layer2"></div>
+        <div class="text">
+          <span class="dot"></span>
+          <span>GreyPikachu • Crafted with Local-First Philosophy &amp; Native Code ⚡</span>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
